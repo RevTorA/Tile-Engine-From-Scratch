@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{de11ae0a-56c4-4060-81d5-914680b0b74a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -21,10 +24,27 @@
     <ClCompile Include="Engine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="sprite1.png">
+      <Filter>data</Filter>
+    </Image>
   </ItemGroup>
 </Project>

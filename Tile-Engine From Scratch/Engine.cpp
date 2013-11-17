@@ -9,21 +9,24 @@ Engine::~Engine() {
 
 }
 
-bool Engine::Init() {
+bool Engine::init() {
 	window = new sf::RenderWindow(sf::VideoMode(800, 600, 32), "Tile-Engine From Scratch");
 
 	if (!window) {
 		return false;
 	}
 
+	loadTextures();
 	return true;
 }
 
-void Engine::RenderFrame() {
-
+void Engine::renderFrame() {
+	window->clear();
+	testTile->draw(0, 0, window);
+	window->display();
 }
 
-void Engine::ProcessInput() {
+void Engine::processInput() {
 	sf::Event e;
 
 	//Loop through all window events
@@ -33,23 +36,31 @@ void Engine::ProcessInput() {
 	}
 }
 
-void Engine::Update() {
+void Engine::update() {
 
 }
 
-void Engine::MainLoop() {
+void Engine::loadTextures() {
+	sf::Texture sprite;
+	sprite.loadFromFile("sprite1.png");
+
+	textureManager.addTexture(sprite);
+	testTile = new Tile(textureManager.getTexture(0));
+}
+
+void Engine::mainLoop() {
 	//Loop until our window is closed
 	while (window->isOpen()) {
-		ProcessInput();
-		Update();
-		RenderFrame();
+		processInput();
+		update();
+		renderFrame();
 	}
 }
 
-void Engine::Go() {
-	if (!Init()) {
+void Engine::go() {
+	if (!init()) {
 		throw "Could not initialize Engine";
 	}
 
-	MainLoop();
+	mainLoop();
 }

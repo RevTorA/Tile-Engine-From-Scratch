@@ -6,7 +6,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 	Engine* engine = new Engine();
 
 	try {
-		engine->Go();
+		engine->go();
 	}
 	catch (char* e) {
 		MessageBoxA(NULL, e, "Exception Occured", MB_OK | MB_ICONERROR);
